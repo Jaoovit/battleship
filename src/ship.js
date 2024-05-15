@@ -18,32 +18,11 @@ class Ship {
     return this.sunk;
   }
 }
-/*
-class Gameboard {
-  creteBoard() {
-    let board = new Array();
-    for (let i = 0; i < 10; i++) {
-      for (let j = 0; j < 10; j++) {
-        board.push([i, j]);
-      }
-    }
-    return board;
-  }
 
-  constructor() {
-    this.board = this.creteBoard();
-    this.enemyBoard = this.creteBoard();
-  }
-}
-
-const gameboard = new Gameboard();
-console.log(gameboard.board);
-console.log(gameboard.enemyBoard);
-*/
-const ship = new Ship(3);
-ship.hit();
-ship.isSunk();
-
-ship;
+export const carrier = new Ship(5);
+export const battleship = new Ship(4);
+export const cruiser = new Ship(3);
+export const submarine = new Ship(3);
+export const destroyer = new Ship(2);
 
 module.exports = Ship;
