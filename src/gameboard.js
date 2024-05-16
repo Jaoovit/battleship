@@ -1,6 +1,6 @@
 //import { carrier, battleship, cruiser, submarine, destroyer } from "./ship";
 
-export class Gameboard {
+class Gameboard {
   createBoard() {
     let theBoard = new Array();
     for (let i = 0; i < 10; i++) {
@@ -13,7 +13,7 @@ export class Gameboard {
 
   constructor() {
     this.board = this.createBoard();
-    this.ship = [];
+    this.ship = this.positionShip();
   }
 
   positionShip(x, y, ship, direction) {
@@ -23,12 +23,12 @@ export class Gameboard {
       for (let z = 0; z <= ship.length - 1; z++) {
         shipPosition.push([x, y + z]);
       }
-      return shipPosition;
+      this.ship = shipPosition;
     } else if (direction === "vertical" && x <= 10 - ship.length) {
       for (let z = 0; z <= ship.length - 1; z++) {
         shipPosition.push([x + z, y]);
       }
-      return shipPosition;
+      this.ship = shipPosition;
     }
   }
 }
@@ -36,6 +36,7 @@ export class Gameboard {
 let testGameboard = new Gameboard();
 
 console.log(testGameboard);
-console.log(testGameboard.positionShip(0, 5, [1, 2, 3, 4], "vertical"));
+testGameboard.positionShip(0, 0, [1, 2, 3, 4, 5], "horizontal");
+console.log(testGameboard.ship);
 
 module.exports = Gameboard;

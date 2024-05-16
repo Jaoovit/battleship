@@ -5,8 +5,8 @@ let testGameboard = new Gameboard();
 let testShip = new Ship(5);
 
 test("Position ship in the board", () => {
-  position(0, 0, testShip, "horizontal");
-  expect(testGameboard.ship).toBe([
+  testGameboard.positionShip(0, 0, testShip.size, "horizontal");
+  expect(testGameboard.ship).toStrictEqual([
     [0, 0],
     [0, 1],
     [0, 2],
@@ -16,8 +16,8 @@ test("Position ship in the board", () => {
 });
 
 test("Position ship in the board", () => {
-  position(0, 0, testShip, "vertical");
-  expect(testGameboard.ship).toBe([
+  testGameboard.positionShip(0, 0, testShip.size, "vertical");
+  expect(testGameboard.ship).toStrictEqual([
     [0, 0],
     [1, 0],
     [2, 0],

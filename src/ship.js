@@ -1,6 +1,7 @@
 class Ship {
   constructor(length) {
     this.length = length;
+    this.size = new Array(length).fill(0);
     this.hits = 0;
     this.sunk = false;
   }
@@ -19,10 +20,10 @@ class Ship {
   }
 }
 
-export const carrier = new Ship(5);
-export const battleship = new Ship(4);
-export const cruiser = new Ship(3);
-export const submarine = new Ship(3);
-export const destroyer = new Ship(2);
+const carrier = new Ship(5);
+const battleship = new Ship(4);
+const cruiser = new Ship(3);
+const submarine = new Ship(3);
+const destroyer = new Ship(2);
 
 module.exports = Ship;
