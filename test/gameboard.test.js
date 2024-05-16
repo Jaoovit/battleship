@@ -25,3 +25,9 @@ test("Position ship in the board", () => {
     [4, 0],
   ]);
 });
+/*
+test("Recive Attack", () => {
+  testGameboard.reciveAttack(0, 0);
+  expect(testGameboard.attack).toBe([0,0]);
+})
+*/
