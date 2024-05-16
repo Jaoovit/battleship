@@ -17,12 +17,18 @@ export class Gameboard {
   }
 
   positionShip(x, y, ship, direction) {
-    for (let z = 0; z <= ship.length - 1; z++) {
-      if (direction === "horizontal" && y <= 10 - ship.length)
-        console.log([x, y + z]);
+    let shipPosition = new Array();
 
-      if (direction === "vertical" && x <= 10 - ship.length)
-        console.log([x + z, y]);
+    if (direction === "horizontal" && y <= 10 - ship.length) {
+      for (let z = 0; z <= ship.length - 1; z++) {
+        shipPosition.push([x, y + z]);
+      }
+      return shipPosition;
+    } else if (direction === "vertical" && x <= 10 - ship.length) {
+      for (let z = 0; z <= ship.length - 1; z++) {
+        shipPosition.push([x + z, y]);
+      }
+      return shipPosition;
     }
   }
 }
@@ -30,6 +36,6 @@ export class Gameboard {
 let testGameboard = new Gameboard();
 
 console.log(testGameboard);
-console.log(testGameboard.positionShip(0, 5, [1, 2, 3], "vertical"));
+console.log(testGameboard.positionShip(0, 5, [1, 2, 3, 4], "vertical"));
 
 module.exports = Gameboard;
